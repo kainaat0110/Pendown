@@ -1,0 +1,102 @@
+import React from 'react';
+import Navbar from '../Components/Navbar';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import writingImg from '../Images/writingImg.png';
+import { useMediaQuery, useTheme } from '@mui/material';
+import TagsButton from '../Components/TagsButton'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { Button } from '@mui/base/Button';
+import Footer from '../Components/Footer';
+import Divider from '@mui/material/Divider';
+
+
+function WritingPage(){
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  
+    const bgStyle = {
+      background: `linear-gradient(to bottom right,
+        rgba(255, 255, 255, 0.4),     
+        rgba(255, 255, 255, 0.4) 30%, 
+        rgba(255, 182, 193, 0.4) 60%,
+        rgba(173, 216, 230, 0.4)
+      )`,
+      minHeight: '100vh',
+      padding: '5vh 5vw',
+      maxWidth: '100%'
+    };
+  
+    const glassStyle = {
+      zIndex: 1,
+      minHeight: '50vh',
+      background: 'rgba(255, 255, 255, 0.3)',
+      borderRadius: '15px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      backdropFilter: 'blur(15px)',
+      WebkitBackdropFilter: 'blur(15px)',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      color: '#333',
+      display: 'flex',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      flexDirection: 'column',
+      textAlign: 'center',
+      padding: '20px',
+    };
+    const bannerStyle = {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexDirection: isSmallScreen ? 'column' : 'row',
+        textAlign: 'center',
+        padding: '10px',
+    };
+    const writingImgtyle = {
+    maxHeight: isSmallScreen ? '60vh' : '80vh',
+    maxWidth: isSmallScreen ? '60vh' : '80vh',
+    width: '100%',  
+    height: 'auto' 
+    };
+  
+    return (
+      <React.Fragment>
+        <CssBaseline />
+        <Container style={bgStyle}>
+          <Container style={glassStyle}>
+            <Navbar />
+            <Container style={bannerStyle}>
+                <Container style={glassStyle} >
+                    <h1>𝓢𝓱𝓪𝓻𝓮 𝔂𝓸𝓾𝓻 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼</h1>
+                    <TagsButton />
+                    <Box
+                        sx={{
+                            width: 500,
+                            maxWidth: '100%',
+                        }}
+                        >
+                        <TextField
+                            fullWidth
+                            label="Share Your Story!"
+                            id="fullWidth"
+                            multiline
+                            rows={4} 
+                            variant="outlined"
+                        />
+                        </Box>
+                        <br />
+                        <Button>Submit</Button>  
+                        <br />
+                </Container>
+                <img src={writingImg} alt= 'Banner'style={writingImgtyle}/>
+            </Container>
+            <Divider variant="middle" component="li" style={{width: '80%'}}/>
+            <Footer />
+          </Container>
+        </Container>
+      </React.Fragment>
+    );
+  }
+  
+export default WritingPage;
