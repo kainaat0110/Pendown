@@ -56,7 +56,7 @@ Pendown is a dynamic web application built with React, designed to provide a saf
 ### Invisible You, Visible Thoughts
 ![Screenshot from 2024-07-08 19-06-44](https://github.com/kainaat0110/Pendown/assets/110599444/c1161db5-3308-4727-bae7-46a2ec8df663)
 
-*Focus on ideas rather than identities*
+*Focus on ideas rather than identities and read what others has to say*
 
 ### Ask Anything, Fear Nothing
 ![Screenshot from 2024-07-08 19-07-56](https://github.com/kainaat0110/Pendown/assets/110599444/d99a4b20-4519-4902-9ff8-90318ca1604b)
@@ -100,8 +100,7 @@ We welcome contributions to Pendown! Here's how you can help:
 5. Open a Pull Request
 
 ## 📞 Contact
-
-Your Name - Kainaat0110@mail.com
+Gmail - Kainaat0110@mail.com
 Project Link: [https://github.com/kainaat0110/Pendown](https://github.com/kainaat0110/Pendown)
 
 ---
