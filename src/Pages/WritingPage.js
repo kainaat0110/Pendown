@@ -4,10 +4,6 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import writingImg from '../Images/writingImg.png';
 import { useMediaQuery, useTheme } from '@mui/material';
-import TagsButton from '../Components/TagsButton'
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { Button } from '@mui/base/Button';
 import Footer from '../Components/Footer';
 import Divider from '@mui/material/Divider';
 
@@ -69,25 +65,16 @@ function WritingPage(){
             <Container style={bannerStyle}>
                 <Container style={glassStyle} >
                     <h1>𝓢𝓱𝓪𝓻𝓮 𝔂𝓸𝓾𝓻 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼</h1>
-                    <TagsButton />
-                    <Box
-                        sx={{
-                            width: 500,
-                            maxWidth: '100%',
-                        }}
-                        >
-                        <TextField
-                            fullWidth
-                            label="Share Your Story!"
-                            id="fullWidth"
-                            multiline
-                            rows={4} 
-                            variant="outlined"
-                        />
-                        </Box>
-                        <br />
-                        <Button>Submit</Button>  
-                        <br />
+                    
+                    <div class="container">
+                      <textarea style={{width: 400, height: 150, fontFamily: 'Verdana, sans-serif', 
+          fontSize: '16px', 
+          fontWeight: 100 }}></textarea>
+                        <div class="modal__footer">
+                          <button class="button">Submit</button>
+                        </div>
+                      </div>
+                    
                 </Container>
                 <img src={writingImg} alt= 'Banner'style={writingImgtyle}/>
             </Container>
@@ -97,6 +84,6 @@ function WritingPage(){
         </Container>
       </React.Fragment>
     );
-  }
-  
+}
+
 export default WritingPage;
