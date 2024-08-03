@@ -3,12 +3,8 @@ import Navbar from '../Components/Navbar';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useMediaQuery, useTheme } from '@mui/material';
-import TagsButton from '../Components/TagsButton';
-import TextField from '@mui/material/TextField';
-import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import { Button } from '@mui/base/Button';
 import questionImg from '../Images/questionImg.png';
 import Footer from '../Components/Footer';
 import Divider from '@mui/material/Divider';
@@ -78,9 +74,14 @@ export default function AskQuestion() {
            <Container style={glassStyle}>
 
            <h1 style={{fontSize: '7vh'}}>𝓟𝓸𝓼𝓽 𝔂𝓸𝓾𝓻 𝓺𝓾𝓮𝓼𝓽𝓲𝓸𝓷 !</h1>
-           <TagsButton />
-           <TextField fullWidth id="standard-basic" label="Write" variant="standard" />
-           <Button>Submit</Button>  
+           <div class="container">
+                      <textarea style={{width: 400, height: 150, fontFamily: 'Verdana, sans-serif', 
+          fontSize: '16px', 
+          fontWeight: 100 }}></textarea>
+                        <div class="modal__footer">
+                          <button class="button">Submit</button>
+                        </div>
+                      </div>  
            </Container>
           </Container>
           <Container style={glassStyle}>
