@@ -73,7 +73,7 @@ export default function AskQuestion() {
           <img src={questionImg} alt= 'Banner' style={{height: '70vh' , width: '80vw'}}/>
            <Container style={glassStyle}>
 
-           <h1 style={{fontSize: '7vh'}}>𝓟𝓸𝓼𝓽 𝔂𝓸𝓾𝓻 𝓺𝓾𝓮𝓼𝓽𝓲𝓸𝓷 !</h1>
+           <h1 style={{fontSize: '7vh'}}>𝓟𝓸𝓼𝓽 𝔂𝓸𝓾𝓻 𝓺𝓾𝓮𝓼𝓽𝓲𝓸𝓷 ! 123</h1>
            <div class="container">
                       <textarea style={{width: 400, height: 150, fontFamily: 'Verdana, sans-serif', 
           fontSize: '16px', 
