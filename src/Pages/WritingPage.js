@@ -9,6 +9,14 @@ import Divider from '@mui/material/Divider';
 
 
 function WritingPage(){
+  const handleCheckboxChange = (event) => {
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    checkboxes.forEach(checkbox => {
+        if (checkbox !== event.target) {
+            checkbox.checked = false;
+        }
+    });
+};
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   
@@ -66,22 +74,62 @@ function WritingPage(){
                 <Container style={glassStyle} >
                     <h1>𝓢𝓱𝓪𝓻𝓮 𝔂𝓸𝓾𝓻 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼</h1>
                     
-                    <div class="container">
-                      <textarea style={{width: 400, height: 150, fontFamily: 'Verdana, sans-serif', 
-          fontSize: '16px', 
-          fontWeight: 100 }}></textarea>
-                        <div class="modal__footer">
-                          <button class="button">Submit</button>
-                        </div>
-                      </div>
-                    
+                    <Container style={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    flexDirection: isSmallScreen ? 'column' : 'row',
+                    textAlign: 'center',
+                }}>
+                    <input class="form-check-input" type="checkbox" value="" id="life" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="life">
+                        Life
+                    </label>
+
+                    <input class="form-check-input" type="checkbox" value="" id="travel" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="travel">
+                        Travel
+                    </label>
+
+                    <input class="form-check-input" type="checkbox" value="" id="food" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="food">
+                        Food
+                    </label>
+
+                    <input class="form-check-input" type="checkbox" value="" id="friends" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="friends">
+                        Friends
+                    </label>
+
+                    <input class="form-check-input" type="checkbox" value="" id="relationship" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="relationship">
+                        Relationship
+                    </label>
+                </Container>
+                <br />
+                <textarea 
+                    class="form-control" 
+                    style={{
+                      width: '100%', 
+                      maxWidth: '500px',   
+                      height: '150px', 
+                      fontFamily: 'Verdana, sans-serif', 
+                      fontSize: '16px', 
+                      fontWeight: 100,
+                  }}>
+                </textarea>
+                <br />
+                <div class="modal__footer">
+                  <button class="button">Submit</button>
+                </div>
+                     
                 </Container>
                 <img src={writingImg} alt= 'Banner'style={writingImgtyle}/>
             </Container>
             <Divider variant="middle" component="li" style={{width: '80%'}}/>
             <Footer />
           </Container>
-        </Container>
+       </Container>
       </React.Fragment>
     );
 }

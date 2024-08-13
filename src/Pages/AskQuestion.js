@@ -8,8 +8,18 @@ import { styled } from '@mui/material/styles';
 import questionImg from '../Images/questionImg.png';
 import Footer from '../Components/Footer';
 import Divider from '@mui/material/Divider';
+import Paper from '@mui/material/Paper'
 
 export default function AskQuestion() {
+  const handleCheckboxChange = (event) => {
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    checkboxes.forEach(checkbox => {
+        if (checkbox !== event.target) {
+            checkbox.checked = false;
+        }
+    });
+};
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -72,16 +82,56 @@ export default function AskQuestion() {
           <Container style={bannerStyle}>
           <img src={questionImg} alt= 'Banner' style={{height: '70vh' , width: '80vw'}}/>
            <Container style={glassStyle}>
+           <h1 style={{fontSize: '7vh'}}>𝓟𝓸𝓼𝓽 𝔂𝓸𝓾𝓻 𝓺𝓾𝓮𝓼𝓽𝓲𝓸𝓷 !</h1>
+           <Container style={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    flexDirection: isSmallScreen ? 'column' : 'row',
+                    textAlign: 'center',
+                }}>
+                    <input class="form-check-input" type="checkbox" value="" id="life" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="life">
+                        Life
+                    </label>
 
-           <h1 style={{fontSize: '7vh'}}>𝓟𝓸𝓼𝓽 𝔂𝓸𝓾𝓻 𝓺𝓾𝓮𝓼𝓽𝓲𝓸𝓷 ! 123</h1>
-           <div class="container">
-                      <textarea style={{width: 400, height: 150, fontFamily: 'Verdana, sans-serif', 
-          fontSize: '16px', 
-          fontWeight: 100 }}></textarea>
-                        <div class="modal__footer">
-                          <button class="button">Submit</button>
-                        </div>
-                      </div>  
+                    <input class="form-check-input" type="checkbox" value="" id="travel" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="travel">
+                        Travel
+                    </label>
+
+                    <input class="form-check-input" type="checkbox" value="" id="food" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="food">
+                        Food
+                    </label>
+
+                    <input class="form-check-input" type="checkbox" value="" id="friends" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="friends">
+                        Friends
+                    </label>
+
+                    <input class="form-check-input" type="checkbox" value="" id="relationship" onChange={handleCheckboxChange} />
+                    <label class="form-check-label" for="relationship">
+                        Relationship
+                    </label>
+                </Container>
+
+                <textarea 
+                    class="form-control" 
+                    style={{
+                      width: '100%', 
+                      maxWidth: '500px',   
+                      height: '150px', 
+                      fontFamily: 'Verdana, sans-serif', 
+                      fontSize: '16px', 
+                      fontWeight: 100,
+                  }}>
+                </textarea>
+           
+              <div class="modal__footer">
+              <input class="btn btn-primary" type="submit" value="Submit" />
+              </div>
+            
            </Container>
           </Container>
           <Container style={glassStyle}>
