@@ -7,7 +7,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Stories from '../Components/Stories';
-import DialogBox from '../Components/DialogBox';
 import QuestionAns from '../Components/QuestionAns';
 import Footer from '../Components/Footer';
 import Divider from '@mui/material/Divider';
