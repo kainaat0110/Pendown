@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 
 const Footer = () => {
@@ -13,6 +13,8 @@ const Footer = () => {
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={styles.icon}><FaFacebook /></a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={styles.icon}><FaInstagram /></a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={styles.icon}><FaLinkedin /></a>
+          <a href="https://github.com/kainaat0110/Pendown.git" target="_blank" rel="noopener noreferrer" style={styles.icon}><FaGithub /></a>
+
         </div>
         
         <p style={styles.copyright}>© {new Date().getFullYear()} PenDown. All rights reserved.</p>
