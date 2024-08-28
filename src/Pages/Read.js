@@ -7,9 +7,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Stories from '../Components/Stories';
-import QuestionAns from '../Components/QuestionAns';
 import Footer from '../Components/Footer';
 import Divider from '@mui/material/Divider';
+import QuestionAns from '../Components/QuestionAns';
 
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -144,6 +144,8 @@ export default function Read() {
               <Container style = {{ display : 'flex' , flexDirection : 'column' , width: 'fit-content'}}> 
                 <br />
                     <div style={containerStyle}>
+                    <label style={labelStyle}><input type="checkbox" style={checkboxStyle} name="filter" value="Relationship" /> Most Liked</label>
+                    <label style={labelStyle}><input type="checkbox" style={checkboxStyle} name="filter" value="Relationship" /> Date</label>
                     <label style={labelStyle}><input type="checkbox" style={checkboxStyle} name="filter" value="Life" /> Life</label>
                     <label style={labelStyle}><input type="checkbox" style={checkboxStyle} name="filter" value="Travel" /> Travel</label>
                     <label style={labelStyle}><input type="checkbox" style={checkboxStyle} name="filter" value="Food" /> Food</label>
