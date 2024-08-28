@@ -26,7 +26,7 @@ const Footer = () => {
 const styles = {
   footer: {
     backgroundColor: 'transparent',
-    padding: '20px 0',
+    padding: '0 0',
     borderTop: '1px solid #e7e7e7',
   },
   content: {

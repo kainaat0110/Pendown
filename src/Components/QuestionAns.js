@@ -4,6 +4,22 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
 
 export default function QuestionAns(props) {
   const [open, setOpen] = React.useState(false);
@@ -15,7 +31,14 @@ export default function QuestionAns(props) {
     setIsChecked(!isChecked);
     if(isChecked === false) setCount(count + 1); // Increment count on every toggle
   };
+  const [Ansopen, AnssetOpen] = React.useState(false);
 
+  const AnshandleClickOpen = () => {
+    AnssetOpen(true);
+  };
+  const AnshandleClose = () => {
+    AnssetOpen(false);
+  };
   // Inline styles
   const containerStyle = {
     display: 'block',
@@ -45,7 +68,7 @@ export default function QuestionAns(props) {
   };
 
   const pathStyle = {
-    strokeWidth: isChecked ? '0' : '20px',
+    strokeWidth: isChecked ? '0' : '15px',
     stroke: '#FFF',
     fill: isChecked ? '#FF5353' : 'none',
   };
@@ -100,7 +123,7 @@ export default function QuestionAns(props) {
     <Container>
     <h3>{props.ques}</h3>
     <p>{props.ans}</p>
-    <button onClick={handleClickOpen('paper')}>Read other responses</button>
+    <Button onClick={handleClickOpen('paper')}>Read other responses</Button>
             <Dialog
               open={open}
               onClose={handleClose}
@@ -126,6 +149,40 @@ export default function QuestionAns(props) {
                 </DialogContentText>
               </DialogContent>
             </Dialog>
+            <Button variant="outlined" onClick={AnshandleClickOpen}>
+        Answer this question
+      </Button>
+      <BootstrapDialog
+        onClose={AnshandleClose}
+        aria-labelledby="customized-dialog-title"
+        open={Ansopen}
+      >
+        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+          Answer Box
+        </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={AnshandleClose}
+          sx={(theme) => ({
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: theme.palette.grey[500],
+          })}
+        >
+          <CloseIcon />
+        </IconButton>
+        <DialogContent dividers>
+        <Box sx={{ width: 500, maxWidth: '100%', height: 150 }}>
+          <TextField rows={5} fullWidth multiline label="Answer" id="fullWidth" />
+        </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={AnshandleClose}>
+            Save changes
+          </Button>
+        </DialogActions>
+      </BootstrapDialog>
           
     </Container>
     <div>
@@ -142,8 +199,8 @@ export default function QuestionAns(props) {
           style={inputStyle}
         />
         <div style={checkmarkStyle}>
-          <svg viewBox="0 0 256 256">
-            <rect fill="none" height="256" width="256"></rect>
+          <svg viewBox="0 0 300 300">
+            <rect fill="none" height="200" width="200"></rect>
             <path
               d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
               style={pathStyle}
