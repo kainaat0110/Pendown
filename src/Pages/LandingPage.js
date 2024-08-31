@@ -4,7 +4,7 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import bannerImg from '../Images/bannerImg.png';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { Button } from '@mui/base/Button';
+import Button from '@mui/material/Button';
 import PersonOffIcon from '@mui/icons-material/PersonOff';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import QuizIcon from '@mui/icons-material/Quiz';
@@ -100,7 +100,7 @@ export default function LandingPage() {
           <Container style={bannerStyle}>
             <img src={bannerImg} alt="Banner" style={bannerImgStyle} />
             <Container style={textStyle}>
-              <h1>Write It Down<br/>Ask your questions<br/>Share your thoughts</h1>
+              <h1>𝚆𝚛𝚒𝚝𝚎 𝙸𝚝 𝙳𝚘𝚠𝚗 <br /> 𝙰𝚜𝚔 𝚢𝚘𝚞𝚛 𝚚𝚞𝚎𝚜𝚝𝚒𝚘𝚗𝚜 <br />𝚂𝚑𝚊𝚛𝚎 𝚢𝚘𝚞𝚛 𝚝𝚑𝚘𝚞𝚐𝚑𝚝𝚜</h1>
               <p>
                 Express yourself freely and anonymously on PenDown. Whether you have burning questions, 
                 insightful ideas, or stories to tell, this is your space to be heard. Join our community 

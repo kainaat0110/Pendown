@@ -6,6 +6,7 @@ import writingImg from '../Images/writingImg.png';
 import { useMediaQuery, useTheme } from '@mui/material';
 import Footer from '../Components/Footer';
 import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
 
 
 function WritingPage(){
@@ -120,7 +121,7 @@ function WritingPage(){
                 </textarea>
                 <br />
                 <div class="modal__footer">
-                  <button class="button">Submit</button>
+                  <Button class="button">Submit</Button>
                 </div>
                      
                 </Container>
