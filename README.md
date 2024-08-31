@@ -49,17 +49,17 @@ Pendown is a dynamic web application built with React, designed to provide a saf
 *Write it down, ask your questions, share your thoughts*
 
 ### Freedom to Be You
-![Screenshot from 2024-07-08 19-05-33](https://github.com/kainaat0110/Pendown/assets/110599444/87f70663-7c35-4ecb-8893-dacdb59c3f9c)
+![Screenshot from 2024-08-31 13-33-05](https://github.com/user-attachments/assets/f63184af-bf9a-4d42-b3c2-81e18e651bfb)
 
 *Express yourself freely and soar to new heights*
 
 ### Invisible You, Visible Thoughts
-![Screenshot from 2024-07-08 19-06-44](https://github.com/kainaat0110/Pendown/assets/110599444/c1161db5-3308-4727-bae7-46a2ec8df663)
+![Screenshot from 2024-08-31 13-35-50](https://github.com/user-attachments/assets/a3e84ba2-1062-4a79-92ea-d3b27b534f9e)
 
 *Focus on ideas rather than identities and read what others has to say*
 
 ### Ask Anything, Fear Nothing
-![Screenshot from 2024-07-08 19-07-56](https://github.com/kainaat0110/Pendown/assets/110599444/d99a4b20-4519-4902-9ff8-90318ca1604b)
+![Screenshot from 2024-08-31 13-36-31](https://github.com/user-attachments/assets/98e9e029-fec9-47d3-a9d2-d1f8f6cf2619)
 
 *A judgment-free zone for all your questions*
 
