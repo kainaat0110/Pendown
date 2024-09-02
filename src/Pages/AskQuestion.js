@@ -131,7 +131,23 @@ export default function AskQuestion() {
                 </textarea>
            
               <div class="modal__footer">
-              <input class="btn btn-primary" type="submit" value="Submit" />
+              <button
+                  style={{
+                    backgroundColor: '#007BFF',
+                    color: 'white',
+                    border: 'none',
+                    padding: '10px 20px',
+                    cursor: 'pointer',
+                    borderRadius: '5px',
+                    fontSize: '16px',
+                    transition: 'background-color 0.3s',
+                    width: '100%'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0056b3'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#007BFF'}
+                >
+                  Submit
+                </button>
               </div>
             
            </Container>
