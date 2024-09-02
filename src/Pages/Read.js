@@ -142,7 +142,6 @@ export default function Read() {
               </CustomTabPanel>
             </Grid>
           </Grid>
-          <Divider variant="middle" component="li" style={{ width: '80%', margin: '20px auto' }} />
           <Footer />
         </Container>
       </Container>

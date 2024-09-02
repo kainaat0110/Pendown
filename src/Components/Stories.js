@@ -1,27 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Button } from '@mui/material';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import React, { useState } from 'react';
+import { Container } from '@mui/material';
 
 export default function Stories(props) {
-  // // Initialize state with likes from localStorage
-  // const [likes, setLikes] = useState(() => {
-  //   return parseInt(localStorage.getItem(`likes-${props.id}`)) || 0;
-  // });
-
-  // // Update localStorage whenever likes change
-  // useEffect(() => {
-  //   localStorage.setItem(`likes-${props.id}`, likes);
-  // }, [likes, props.id]);
-
-  // const handleLike = () => {
-  //   setLikes(likes + 1);
-  // };
   const [isChecked, setIsChecked] = useState(false);
   const [count, setCount] = useState(0);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
-    if(isChecked === false) setCount(count + 1); // Increment count on every toggle
+    if (!isChecked) setCount(count + 1); // Increment count when checked
   };
 
   // Inline styles
@@ -32,6 +18,9 @@ export default function Stories(props) {
     userSelect: 'none',
     transition: '100ms',
     transform: isChecked ? 'scale(1)' : 'scale(1.1)',
+    display: 'flex', // Added for flexbox alignment
+    alignItems: 'center', // Align items vertically
+    gap: '5px', // Space between the icon and count
   };
 
   const inputStyle = {
@@ -86,15 +75,16 @@ export default function Stories(props) {
   return (
     <div>
       <Container style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', padding: '2vh 2vw' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+        <div style={{ textAlign: 'justify', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
           <span>{props.date}</span>
-          <div>
-            <label style={containerStyle}>
+          <div style={containerStyle}>
+            <label style={{ display: 'flex', alignItems: 'center' }}>
               <input
                 type="checkbox"
                 checked={isChecked}
                 onChange={handleCheckboxChange}
                 style={inputStyle}
+                aria-checked={isChecked}
               />
               <div style={checkmarkStyle}>
                 <svg viewBox="0 0 256 256">
@@ -106,11 +96,11 @@ export default function Stories(props) {
                 </svg>
               </div>
             </label>
-            <p>{count}</p>
+            <p style={{ margin: '0' }}>{count}</p>
             <style>{keyframes}</style>
           </div>
         </div>
-        <p>{props.para}</p>
+        <p style={{ textAlign: 'justify' }}>{props.para}</p>
       </Container>
     </div>
   );
