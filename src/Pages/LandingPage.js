@@ -13,9 +13,12 @@ import shaming from '../Images/shaming.png';
 import write from '../Images/write.png';
 import Divider from '@mui/material/Divider';
 import Footer from '../Components/Footer';
+import { useNavigate } from 'react-router-dom';
+
 
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -106,7 +109,7 @@ export default function LandingPage() {
                 insightful ideas, or stories to tell, this is your space to be heard. Join our community 
                 of curious minds and diverse voices.
               </p>
-              <Button>
+              <Button onClick={ () => navigate('/read')}>
                 Get Started
               </Button>
               <br />

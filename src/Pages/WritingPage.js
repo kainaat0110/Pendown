@@ -75,37 +75,30 @@ function WritingPage(){
                 <Container style={glassStyle} >
                     <h1>𝓢𝓱𝓪𝓻𝓮 𝔂𝓸𝓾𝓻 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼</h1>
                     
-                    <Container style={{
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                    alignItems: 'center',
-                    flexDirection: isSmallScreen ? 'column' : 'row',
-                    textAlign: 'center',
-                }}>
-                    <input class="form-check-input" type="checkbox" value="" id="life" onChange={handleCheckboxChange} />
-                    <label class="form-check-label" for="life">
-                        Life
-                    </label>
-
-                    <input class="form-check-input" type="checkbox" value="" id="travel" onChange={handleCheckboxChange} />
-                    <label class="form-check-label" for="travel">
-                        Travel
-                    </label>
-
-                    <input class="form-check-input" type="checkbox" value="" id="food" onChange={handleCheckboxChange} />
-                    <label class="form-check-label" for="food">
-                        Food
-                    </label>
-
-                    <input class="form-check-input" type="checkbox" value="" id="friends" onChange={handleCheckboxChange} />
-                    <label class="form-check-label" for="friends">
-                        Friends
-                    </label>
-
-                    <input class="form-check-input" type="checkbox" value="" id="relationship" onChange={handleCheckboxChange} />
-                    <label class="form-check-label" for="relationship">
-                        Relationship
-                    </label>
+                    <Container>
+                  <div style={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', gap: '10px', marginBottom: '20px' }}>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '16px', cursor: 'pointer', width: isSmallScreen ? '100%' : 'auto' }}>
+                  <input type="checkbox" style={{ marginRight: '10px' }} name="filter" value="Most Liked" /> Most Liked
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '16px', cursor: 'pointer', width: isSmallScreen ? '100%' : 'auto' }}>
+                  <input type="checkbox" style={{ marginRight: '10px' }} name="filter" value="Date" /> Date
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '16px', cursor: 'pointer', width: isSmallScreen ? '100%' : 'auto' }}>
+                  <input type="checkbox" style={{ marginRight: '10px' }} name="filter" value="Life" /> Life
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '16px', cursor: 'pointer', width: isSmallScreen ? '100%' : 'auto' }}>
+                  <input type="checkbox" style={{ marginRight: '10px' }} name="filter" value="Travel" /> Travel
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '16px', cursor: 'pointer', width: isSmallScreen ? '100%' : 'auto' }}>
+                  <input type="checkbox" style={{ marginRight: '10px' }} name="filter" value="Food" /> Food
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '16px', cursor: 'pointer', width: isSmallScreen ? '100%' : 'auto' }}>
+                  <input type="checkbox" style={{ marginRight: '10px' }} name="filter" value="Friends" /> Friends
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '16px', cursor: 'pointer', width: isSmallScreen ? '100%' : 'auto' }}>
+                  <input type="checkbox" style={{ marginRight: '10px' }} name="filter" value="Relationship" /> Relationship
+                </label>
+                </div>
                 </Container>
                 <br />
                 <textarea 
