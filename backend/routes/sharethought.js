@@ -4,7 +4,7 @@ const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const PostQ = require('../models/PostyourQuestion');
 
-// Define the route for posting a thought
+// API NO 1 :- To store the thoughts in the database
 router.post('/sharethought',
   // Validate and sanitize input
   body('text').isString().withMessage('Text is required and must be a string'),
@@ -46,6 +46,7 @@ router.post('/sharethought',
   }
 );
 
+// API NO 2 :- To store the questions in the database
 router.post('/postQuestion',
   // Validate and sanitize input
   body('question').isString().withMessage('Question is required and must be a string'),
@@ -82,5 +83,27 @@ router.post('/postQuestion',
     }
   }
 );
+
+// API NO 3:- Retireve the data from the tables 
+router.get('/getsharethoughts', async (req, res) => {
+  try {
+    // Retrieve all thoughts from the database
+    const thoughts = await ShareThought.find();
+    res.status(200).json(thoughts);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// API NO 4:- Retrieve the Questions
+router.get('/getQuestion', async (req, res) => {
+  try {
+    // Retrieve all thoughts from the database
+    const question = await PostQ.find();
+    res.status(200).json(question);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 module.exports = router;
