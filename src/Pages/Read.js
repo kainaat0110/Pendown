@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,9 +8,9 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Stories from '../Components/Stories';
 import Footer from '../Components/Footer';
-import Divider from '@mui/material/Divider';
 import QuestionAns from '../Components/QuestionAns';
 import { Grid, useMediaQuery } from '@mui/material';
+import axios from 'axios';  // Make sure you have axios installed
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,11 +43,33 @@ function a11yProps(index) {
 
 export default function Read() {
   const [value, setValue] = React.useState(0);
+  const [questions, setQuestions] = useState([]);
+  const [thoughts, setThoughts] = useState([]);
   const isMobile = useMediaQuery('(max-width:600px)');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    // Fetch questions from the API
+    axios.get('http://localhost:5000/api/sharethought/getQuestion')
+      .then(response => {
+        setQuestions(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching questions:', error);
+      });
+
+    // Fetch thoughts from the API
+    axios.get('http://localhost:5000/api/sharethought/getsharethoughts')
+      .then(response => {
+        setThoughts(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching thoughts:', error);
+      });
+  }, []);
 
   const bgStyle = {
     background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 30%, rgba(255, 182, 193, 0.4) 60%, rgba(173, 216, 230, 0.4))',
@@ -83,6 +105,7 @@ export default function Read() {
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
               <Tab label="Shared Stories" {...a11yProps(0)} />
               <Tab label="Questions" {...a11yProps(1)} />
+              <Tab label="Thoughts" {...a11yProps(2)} />
             </Tabs>
           </Box>
           <br />
@@ -133,12 +156,25 @@ export default function Read() {
               <CustomTabPanel value={value} index={0}>
                 <Stories id="1" para="As a food blogger, I recently had the pleasure of discovering a hidden gem in Mumbai's bustling Bandra neighborhood. Nestled in a quaint lane, 'Fusion Flavors' is the city's newest culinary hotspot that's creating quite a buzz. The moment I stepped in, I was captivated by the restaurant's chic industrial-meets-traditional decor, setting the stage for an intriguing dining experience. Chef Arjun Kapoor's innovative menu seamlessly blends local Maharashtra flavors with global cuisines, resulting in dishes that are both familiar and excitingly novel. The star of the evening was undoubtedly the 'Mumbai Merlot Mutton' - a succulent lamb shank slow-cooked in a rich red wine and coconut gravy, served with a saffron-infused risotto. The 'Koli-style Ceviche' was another standout, marrying the freshness of local seafood with zesty Latin American flavors. With its creative cocktails, attentive service, and a menu that pushes culinary boundaries, Fusion Flavors is definitely a must-visit for food enthusiasts looking to embark on a gastronomic adventure in Mumbai." date="March 10, 2024" />
                 <Stories id="2" para="One of life's most valuable lessons is the power of resilience in the face of adversity. Throughout our journey, we inevitably encounter obstacles, setbacks, and failures that test our resolve. It's during these challenging times that we learn the true measure of our character. The ability to bounce back, to view failures as opportunities for growth rather than insurmountable barriers, is what ultimately shapes our future. This resilience isn't about avoiding hardship, but rather about developing the mental fortitude to persevere through it. By embracing challenges and learning from our missteps, we not only become stronger individuals but also open ourselves up to new possibilities and personal growth. Remember, it's not the absence of difficulties that defines us, but how we rise above them that truly matters." date="November 7, 2023" />
-                <Stories id="3" para="Matheran, a quaint hill station nestled in the Western Ghats, offered a refreshing escape from the urban bustle. As we embarked on the toy train journey up the winding tracks, lush greenery and misty vistas unfolded before our eyes. The car-free environment was a welcome change, allowing us to explore the red-earth paths on foot and horseback. We marveled at panoramic viewpoints like Louisa Point and Charlotte Lake, breathing in the crisp mountain air. The tranquil atmosphere, punctuated only by the sounds of nature and the clip-clop of horses, provided a perfect setting for relaxation and introspection. Our stay in a colonial-era hotel added a touch of nostalgia to this serene getaway, making our Matheran trip a memorable blend of natural beauty and old-world charm." date="August 9, 2023" />
+                <Stories id="3" para="Matheran, a quaint hill station located just a few hours from Mumbai, offers a refreshing retreat from the city's hustle and bustle. Known for its serene landscapes and lush greenery, Matheran provides a perfect escape for nature enthusiasts. One of the most charming aspects of Matheran is its ban on motor vehicles, which means that visitors can explore the town on foot or horseback. The town is dotted with scenic viewpoints like Panorama Point and Echo Point, each offering breathtaking views of the surrounding valleys and hills. A leisurely stroll through the ancient forest trails reveals the rich biodiversity of the region, including colorful butterflies and exotic bird species. For those seeking relaxation, Matheran's cool climate and tranquil environment make it an ideal destination to unwind and reconnect with nature." date="August 9, 2023" />
               </CustomTabPanel>
               <CustomTabPanel value={value} index={1}>
-                <QuestionAns ques="How does friendship contribute to personal growth and well-being?" ans="Friendship plays a pivotal role in personal growth and well-being by providing emotional support, fostering a sense of belonging, and enhancing self-esteem. Friends offer different perspectives, challenge us to grow, and help us navigate life's challenges. They provide a safe space for expressing our thoughts and feelings, which can reduce stress and improve mental health. Through shared experiences and mutual encouragement, friendships can also boost our confidence and motivate us to pursue our goals. Overall, the bonds of friendship enrich our lives, making us feel more connected, understood, and supported." />
-                <QuestionAns ques="How can couples maintain a strong emotional connection in a long-term relationship?" ans="Maintaining a strong emotional connection in a long-term relationship requires ongoing effort and intentionality. Key strategies include prioritizing quality time together, engaging in open and honest communication about feelings and needs, and showing appreciation for each other regularly. Couples should also strive to support each other's individual growth while nurturing shared goals and experiences. Keeping the romance alive through small gestures, surprise acts of kindness, and maintaining physical intimacy is crucial. Additionally, navigating challenges together, practicing forgiveness, and continuously learning about each other can deepen the emotional bond. Remember, a strong connection is built on mutual respect, trust, and the willingness to evolve together as individuals and as a couple." />
-                <QuestionAns ques="How do we find true fulfillment in a world that often emphasizes external achievements and material success?" ans="Finding true fulfillment in life often involves looking beyond external achievements and material success. It's about aligning our actions with our core values and passions, practicing gratitude for what we have, and pursuing personal growth. Cultivating meaningful relationships and contributing to something larger than ourselves can provide a deep sense of purpose. True fulfillment comes from living authentically and nurturing our inner selves, rather than solely chasing societal definitions of success. It's about creating a life that resonates with our true selves, balancing personal growth with meaningful connections and positive impact on the world around us. By focusing on these aspects, we can find lasting contentment and joy that goes beyond superficial measures of achievement." />
+                {questions.length > 0 ? (
+                  questions.map((q) => (
+                    <QuestionAns key={q._id} ques={q.question} />
+                  ))
+                ) : (
+                  <p>No questions available.</p>
+                )}
+              </CustomTabPanel>
+              <CustomTabPanel value={value} index={2}>
+                {thoughts.length > 0 ? (
+                  thoughts.map((t) => (
+                    <QuestionAns key={t._id} ques={t.text} />
+                  ))
+                ) : (
+                  <p>No thoughts available.</p>
+                )}
               </CustomTabPanel>
             </Grid>
           </Grid>
