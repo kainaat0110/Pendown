@@ -109,7 +109,7 @@ export default function LandingPage() {
                 insightful ideas, or stories to tell, this is your space to be heard. Join our community 
                 of curious minds and diverse voices.
               </p>
-              <Button onClick={ () => navigate('/read')}>
+              <Button onClick={ () => navigate('/signin')}>
                 Get Started
               </Button>
               <br />

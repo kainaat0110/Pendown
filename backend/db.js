@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const mongoURI = "mongodb+srv://sumitsawant1029:TCCMSCUe9KBz9dSv@pendowncluster.occow2a.mongodb.net/?retryWrites=true&w=majority&appName=PendownClusterp";
+const mongoURI = "mongodb+srv://pendown:UF28TSZvCz5eblhP@cluster0.byat3.mongodb.net/";
 
 const connectToMongo = () => {
     mongoose.connect(mongoURI, {
